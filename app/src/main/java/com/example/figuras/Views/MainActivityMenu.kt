@@ -10,11 +10,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.figuras.R
 
 class MainActivityMenu : AppCompatActivity() {
+
+    private lateinit var spinner: Spinner
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
 
-        val spinner = findViewById<Spinner>(R.id.spinnerFiguras)
+        spinner = findViewById(R.id.spinnerFiguras)
 
         val figuras = arrayOf(
             "Selecciona una figura",
@@ -46,5 +49,10 @@ class MainActivityMenu : AppCompatActivity() {
                 // No hacer nada
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        spinner.setSelection(0)
     }
 }

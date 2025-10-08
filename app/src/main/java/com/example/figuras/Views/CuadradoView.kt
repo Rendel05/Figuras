@@ -3,6 +3,7 @@ package com.example.figuras.Views
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -42,6 +43,10 @@ class CuadradoView : AppCompatActivity(), ContratoCuadrado.CuadradoVista {
             } else {
                 showError("Por favor ingresa un valor válido para el lado")
             }
+        }
+
+        findViewById<ImageButton>(R.id.btnBack).setOnClickListener {
+            finish()
         }
 
         btnPerimetro.setOnClickListener {

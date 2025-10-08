@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.figuras.R
 import com.example.figuras.Contracts.ContratoCirculo
 import com.example.figuras.Presenter.PresentadorCirculo
+import android.widget.ImageButton
 
 class CirculoView : AppCompatActivity(), ContratoCirculo.Vista {
 
@@ -20,6 +21,7 @@ class CirculoView : AppCompatActivity(), ContratoCirculo.Vista {
     fun setPresentador(presentador: ContratoCirculo.Presentador) {
         this.presentador = presentador
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +41,10 @@ class CirculoView : AppCompatActivity(), ContratoCirculo.Vista {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        findViewById<ImageButton>(R.id.btnBack).setOnClickListener {
+            finish()
         }
 
         // Listener del botón de área

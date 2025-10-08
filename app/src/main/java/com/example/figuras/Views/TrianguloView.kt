@@ -3,6 +3,7 @@ package com.example.figuras.Views
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -55,6 +56,11 @@ class TrianguloView : AppCompatActivity(), ContratoTriangulo.Vista {
             val l3=txtl3.text.toString().toFloat()
             presentador.perimetro(l1,l2,l3)
         }
+
+        findViewById<ImageButton>(R.id.btnBack).setOnClickListener {
+            finish()
+        }
+
         //listener del boton para definir el tipo de triangulo
         btnTipo.setOnClickListener {
             val l1=txtl1.text.toString().toFloat()

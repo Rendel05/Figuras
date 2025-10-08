@@ -3,6 +3,7 @@ package com.example.figuras.Views
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -47,6 +48,10 @@ class RectanguloView : AppCompatActivity(), ContratoRectangulo.RectanguloVista {
             } else {
                 showError("Por favor ingresa valores válidos para ambos lados")
             }
+        }
+
+        findViewById<ImageButton>(R.id.btnBack).setOnClickListener {
+            finish()
         }
 
         // Listener del botón de perímetro
